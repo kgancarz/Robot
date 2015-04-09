@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script src="script/jquery-1.11.2.min.js"></script>
+<script src="script/driveControls.js"></script>
+<script src="script/banterControls.js"></script>
+<TITLE>
+Robot Control Panel
+</TITLE>
+</HEAD><body> 
+
+<div id="driveControls">
+<div class="driveControlsVerticalLayout">
+	<div class="driveControlsCell">
+	</div>
+	<div class="driveControlsCell"  onclick="driveControlForward()">
+		<a href="#" onclick="driveControlForward()">Forward</a>
+	</div>
+	<div class="driveControlsCell">
+	</div><div style="clear: both;"></div>
+</div>
+<div class="driveControlsVerticalLayout">
+	<div class="driveControlsCell" onclick="driveControlLeft()">
+		<a href="#" onclick="driveControlLeft()">Left</a>
+	</div>
+	<div class="driveControlsCell" onclick="driveControlStop()">
+		<a href="#" onclick="driveControlStop()">Stop</a>
+	</div>
+	<div class="driveControlsCell" onclick="driveControlRight()">
+		<a href="#" onclick="driveControlRight()">Right</a>
+	</div><div style="clear: both;"></div>
+</div>
+<div class="driveControlsVerticalLayout">
+	<div class="driveControlsCell">
+	</div>
+	<div class="driveControlsCell"  onclick="driveControlReverse()">
+		<a href="#" onclick="driveControlReverse()">Reverse</a>
+	</div>
+	<div class="driveControlsCell">
+	</div><div style="clear: both;"></div>
+</div>
+<BR>
+<BR>
+<div class="voiceLayout">
+<div class ="banterLayout">
+<input type="text" id="banterText" value="Hello World"></input>
+</div>
+<div class="banterLayout">
+<input type="button" onclick="banter()" value="Say It!"></input>
+</div>
+<div style="clear: both;"></div>
+</div>
+</body>
+</HTML>

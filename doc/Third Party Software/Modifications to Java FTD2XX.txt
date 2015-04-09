@@ -1,0 +1,5 @@
+Added the latest version of JNA with linux-arm support, modified JNA bindings for compatibility.
+
+Switched out the i386 libftd2xx.so with a version compiled for the Raspberry Pi/ARM v7.
+
+TODO: Try to use system library, if available.

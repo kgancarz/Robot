@@ -1,0 +1,45 @@
+package robot.jetty.webserver;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import robot.controllers.banter.VoiceController;
+
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+
+public class BanterServlet extends HttpServlet
+{
+	private static final long serialVersionUID = 1L;
+	public BanterServlet(){
+    	
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+
+    	String echo=request.getParameter("text");
+    	System.out.println(echo);
+    	listAllVoices();
+    	VoiceController.getInstance().speak(echo);
+        response.setContentType("text/html");
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.getWriter().println("<h1>"+"It's ALIVE!"+"</h1>");
+        response.getWriter().println("session=" + request.getSession(true).getId());
+    }
+    
+    public static void listAllVoices() {
+        System.out.println();
+        System.out.println("All voices available:");        
+        VoiceManager voiceManager = VoiceManager.getInstance();
+        Voice[] voices = voiceManager.getVoices();
+        for (int i = 0; i < voices.length; i++) {
+            System.out.println("    " + voices[i].getName()
+                               + " (" + voices[i].getDomain() + " domain)");
+        }
+    }
+
+}

@@ -1,0 +1,60 @@
+package robot.jetty.webserver;
+
+import java.net.URL;
+
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.webapp.WebAppContext;
+
+import robot.controllers.drive.DriveController;
+
+public class WebServer {
+
+	private static WebServer __instance = null;
+
+	public static WebServer getInstance() {
+		if (__instance == null) {
+			__instance = new WebServer();
+		}
+		return __instance;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Starting embedded Jetty service...");
+		getInstance();
+		System.out.println("Finished initializing Jetty service.");
+	}
+
+	private WebServer() {
+		Server server = new Server(80);
+		try {
+
+			//create web app context with local resource base
+			
+			final URL warUrl = this.getClass().getClassLoader()
+					.getResource("robot/jetty/webserver/webapp/");
+			WebAppContext webAppContext = new WebAppContext();
+			webAppContext.setServer(server);
+			webAppContext.setContextPath("/");
+			webAppContext.setResourceBase(warUrl.toString());
+			webAppContext.setWelcomeFiles(new String[] { "index.html" });
+			
+			//add servlets
+			webAppContext.addServlet(new ServletHolder(new AuthorizationServlet()),
+					"/auth");
+			webAppContext.addServlet(new ServletHolder(new BanterServlet()), "/banter");
+			webAppContext.addServlet(new ServletHolder(new DebugServlet()), "/debug");
+			webAppContext.addServlet(new ServletHolder(new DriveServlet()), "/drive");
+			DriveController.getInstance();
+
+			server.setHandler(webAppContext);
+			server.start();
+			server.join();
+		} catch (Exception e) {
+			System.out.println("Error while initializing Jetty service: "
+					+ e.getMessage());
+			e.printStackTrace();
+		}
+	}
+}

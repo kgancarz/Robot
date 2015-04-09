@@ -1,0 +1,25 @@
+INDEX VERSION 1.127+C:\Users\Kyle\Documents\GitHub\Robot\workspace\.metadata\.plugins\org.eclipse.jdt.core
+3732498881.index
+3883868377.index
+724032352.index
+35764307.index
+134296050.index
+2795762326.index
+3208426689.index
+2316102611.index
+3264989491.index
+2548499729.index
+1957968718.index
+728551685.index
+130147870.index
+4242135386.index
+3565674710.index
+2348113578.index
+4159432100.index
+1891765932.index
+946580212.index
+1179815636.index
+1409493203.index
+642964287.index
+3668621785.index
+3803567967.index

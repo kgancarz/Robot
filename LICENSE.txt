@@ -1,0 +1,15 @@
+With the exception of any third-party software that has been modified to work with or redistributed with this software and maintains its own license, all code and documentation found in this repository falls under the MIT License, as outlined below.
+
+License information for any third-party software that has been redistributed with this work can be found in the "third-party-licenses" directory of this repository.
+
+Disclaimer: With regards to third-party software I will try my best to give credit where credit is due, but if I fall short of any legal obligations please contact me (tommacco@gmail.com) so that I can resolve the error.
+
+---------------------------------------
+
+Copyright (c) 2015 Kyle Gancarz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

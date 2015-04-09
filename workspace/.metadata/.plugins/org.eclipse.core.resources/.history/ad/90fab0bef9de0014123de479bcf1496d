@@ -1,0 +1,44 @@
+package robot.jetty.webserver;
+
+import javax.servlet.http.HttpServlet;
+
+public class ServoController extends HttpServlet
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static ServoController __instance=null;
+	public static ServoController getInstance(){
+		if(__instance==null){
+			__instance=new ServoController();
+		}
+		return __instance;
+	}
+	
+	public void startMotorTest() throws Exception{
+		        System.out.println("<--Pi4J--> GPIO Control Example ... started.");
+
+		        System.out.println("wiring pi setup");
+		        com.pi4j.wiringpi.Gpio.wiringPiSetup();
+		        Thread.sleep(2000);;
+		        System.out.println("wiring pi setup done");
+			final GpioController gpio = GpioFactory.getInstance();
+
+		        // Este sera el pin “enabled” del controlador para el motor 1 
+			//GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+			// enabled
+			//pin.high();
+			
+			//4 18 8 7
+			//7 1 10 11
+			int motor=18;
+			    SoftPwm.softPwmCreate(motor, 0, 100);
+				for(int i=1;i<=10;i++){
+		        	Thread.sleep(2000);
+					int power=i*9;
+					System.out.println(power);
+					SoftPwm.softPwmWrite(motor, power);
+				}
+	}
+}
